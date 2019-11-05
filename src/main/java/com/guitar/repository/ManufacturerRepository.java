@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 import com.guitar.model.Manufacturer;
@@ -44,7 +45,7 @@ public class ManufacturerRepository {
 	 * Find
 	 */
 	public Manufacturer find(Long id) {
-		return manufacturerJpaRepository.findOne(id);
+		return manufacturerJpaRepository.getOne(id);
 	}
 
 	/**
